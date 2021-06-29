@@ -5,14 +5,14 @@ const ManagePost = () => {
     const [managePost, setManagePost] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/post')
+        fetch('https://young-inlet-95957.herokuapp.com/post')
             .then(res => res.json())
             .then(data => setManagePost(data))
     }, []);
 
     // delete Post
     const deletePost = (id) => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://young-inlet-95957.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

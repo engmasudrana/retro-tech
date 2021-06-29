@@ -10,7 +10,7 @@ const Detail = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/post/${id}`)
+        fetch(`https://young-inlet-95957.herokuapp.com/post/${id}`)
             .then(res => res.json())
             .then(data => setPostDetail(data[0]))
     }, [])

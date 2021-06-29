@@ -25,7 +25,7 @@ const AddBlog = () => {
         if (imageLink !== null) {
             const postData = data;
             postData.image = imageLink;
-            fetch('http://localhost:5000/addPost', {
+            fetch('https://young-inlet-95957.herokuapp.com/addPost', {
                 method: "POST",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(postData)
