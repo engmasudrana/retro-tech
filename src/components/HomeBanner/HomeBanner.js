@@ -1,32 +1,16 @@
 import React from 'react';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const HomeBanner = () => {
-    const settings = {
-        autoplaySpeed: 2000,
-        autoplay: true,
-        fade: true,
-        infinite: true,
-        speed: 2000,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
     return (
-        <div className="container mt-10">
-            <Slider {...settings}>
-                <div>
-                    <img className="w-100 rounded" src="https://flexiblog-beauty.netlify.app/static/80aba1ff0497753674bfda8335578775/14912/image.webp" />
+        <div className="container home-bg text-center">
+            <div className="grid grid-cols-1 py-16">
+                <div className="">
+                    <div className="mt-28">
+                        <h1 className="xs:text-4xl sm:text-6xl text-gray-700 mb-10">BEST PLACES TO VISITS</h1>
+                        <p className="mb-10 text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br /> Lorem Ipsum has been the industry's standard dummy text</p>
+                    </div>
                 </div>
-                <div>
-                    <img className="w-100 rounded" src="https://flexiblog-beauty.netlify.app/static/e0c844791e42397951524105e4643eda/14912/image.webp" />
-                </div>
-                <div>
-                    <img className="w-100 rounded" src="https://flexiblog-beauty.netlify.app/static/ea4444a37846586d8adfa1d9fa6d75ec/14912/image.webp" />
-                </div>
-                
-            </Slider>
+            </div>
         </div>
     );
 };

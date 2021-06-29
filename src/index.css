@@ -8,8 +8,30 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.navBackground{
+    background-color: #C7D2FE;
+    transition: all ease .5s;
+}
+
+.home-bg{
+    background-image: url('../src/images/banner.png');
+    background-size: cover;
+}
+
 .btn{
     @apply inline-block w-24 h-10 bg-indigo-500 text-center py-2 font-medium shadow-md rounded hover:bg-indigo-600 text-white;
+}
+
+.login-btn{
+    @apply inline-block w-24 h-10 bg-indigo-500 text-center py-2 font-medium rounded hover:bg-indigo-600 text-white;
+}
+
+.edit-btn{
+    @apply inline-block w-16 h-8 py-1 bg-green-400 text-center  font-medium rounded hover:bg-green-500 text-white;
+}
+
+.delete-btn{
+    @apply inline-block w-16 h-8 bg-red-500 text-center py-1 font-medium rounded hover:bg-red-600 text-white;
 }
 
 .footer-title{
@@ -17,4 +39,8 @@ body{
 }
 .footer-des{
     @apply text-gray-500 hover:text-indigo-700 leading-7 cursor-pointer;
+}
+
+.title{
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
 }
