@@ -25,7 +25,7 @@ const Header = () => {
                         <Link to="/coming"><li className="hover:text-gray-600"><a href=""></a>About</li></Link>
                         <Link to="/"><li className="hover:text-gray-600"><a href=""></a>Blog</li></Link>
                         <Link to="/coming"><li className="hover:text-gray-600"><a href=""></a>Contact</li></Link>
-                        <Link to="/login"><a className="btn" href="">Admin</a></Link>
+                        <Link to="/admin"><a className="btn" href="">Admin</a></Link>
                     </ul>
                 </div>
             </div>

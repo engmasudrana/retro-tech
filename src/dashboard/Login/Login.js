@@ -1,36 +1,51 @@
 import React from 'react';
 import ui from '../../images/auth.svg'
-import { Link } from 'react-router-dom';
-
-
-
+import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
+
+    const { register, handleSubmit } = useForm();
+
+    const history = useHistory()
+
+    const onSubmit = data => {
+
+        fetch('https://young-inlet-95957.herokuapp.com/login', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.status === true) {
+                    history.push('/admin')
+                }
+                else {
+                    alert('Invalid Username or Password');
+                }
+            })
+    }
+
     return (
         <div className="container p-8">
             <h1 className="text-center mb-10 text-3xl font-bold text-indigo-600 shadow-sm py-4 rounded bg-white">Admin Login</h1>
             <div className="grid xs:grid-cols-1 sm:grid-cols-2  p-10 bg-white shadow rounded">
                 <div className="p-10">
-                    <form class="px-8 pt-6 pb-8 mb-4 shadow rounded">
+                    <form onSubmit={handleSubmit(onSubmit)} class="px-8 pt-6 pb-8 mb-4 shadow rounded">
                         <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                                Username
-                            </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username</label>
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" {...register("email")} /> <br />
                         </div>
+
                         <div class="mb-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-                                Password
-                            </label>
-                            <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" />
-
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
+                            <input type="password" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" {...register("password")} /> <br />
                         </div>
-                        <div class="flex items-center justify-between">
-                            <Link to="/admin"><button className="login-btn">Login</button></Link>
 
-                            <a class="inline-block align-baseline font-bold text-sm text-indigo-500 hover:text-blue-800" href="#">
-                                Forgot Password?
-                            </a>
+                        <div class="flex items-center justify-between">
+                            <input className="login-btn cursor-pointer" type="submit" />
+                            <a class="inline-block align-baseline font-bold text-sm text-indigo-500 hover:text-blue-800" href="#">Forgot Password?</a>
                         </div>
                     </form>
                 </div>

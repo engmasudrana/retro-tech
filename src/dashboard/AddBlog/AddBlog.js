@@ -43,7 +43,7 @@ const AddBlog = () => {
 
             <div className="shadow bg-white p-10 rounded-md">
                 <h1 className="text-center mb-10 text-3xl font-bold text-indigo-600">Add Post</h1>
-                <form onSubmit={handleSubmit(onSubmit)} className="">
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <input className="border rounded xs:w-66 sm:w-96 py-3 px-3 leading-tight focus:outline-none" placeholder="Post Title" {...register("title")} /> <br /><br />
                     <textarea className="border rounded xs:w-66 sm:w-96 py-3 px-3 leading-tight focus:outline-none" placeholder="Content" {...register("content")} /> <br />
                     <input className="w-96" type="file" name="image" onChange={handleImageUpload} /> <br /> <br />
