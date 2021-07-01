@@ -7,7 +7,7 @@ const Login = () => {
 
     const { register, handleSubmit } = useForm();
 
-    const history = useHistory()
+    const history = useHistory();
 
     const onSubmit = data => {
 
@@ -22,30 +22,31 @@ const Login = () => {
                     history.push('/admin')
                 }
                 else {
-                    alert('Invalid Username or Password');
+                    alert('Invalid username or Password')
                 }
             })
     }
+
 
     return (
         <div className="container p-8">
             <h1 className="text-center mb-10 text-3xl font-bold text-indigo-600 shadow-sm py-4 rounded bg-white">Admin Login</h1>
             <div className="grid xs:grid-cols-1 sm:grid-cols-2  p-10 bg-white shadow rounded">
                 <div className="p-10">
-                    <form onSubmit={handleSubmit(onSubmit)} class="px-8 pt-6 pb-8 mb-4 shadow rounded">
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username</label>
+                    <form onSubmit={handleSubmit(onSubmit)} className="px-8 pt-6 pb-8 mb-4 shadow rounded">
+                        <div className="mb-4">
+                            <label className="block text-gray-700 text-sm font-bold mb-2">Username</label>
                             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" {...register("email")} /> <br />
                         </div>
 
-                        <div class="mb-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
+                        <div className="mb-6">
+                            <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
                             <input type="password" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" {...register("password")} /> <br />
                         </div>
 
-                        <div class="flex items-center justify-between">
+                        <div className="flex items-center justify-between">
                             <input className="login-btn cursor-pointer" type="submit" />
-                            <a class="inline-block align-baseline font-bold text-sm text-indigo-500 hover:text-blue-800" href="#">Forgot Password?</a>
+                            <a className="inline-block align-baseline font-bold text-sm text-indigo-500 hover:text-blue-800" href="#">Forgot Password?</a>
                         </div>
                     </form>
                 </div>

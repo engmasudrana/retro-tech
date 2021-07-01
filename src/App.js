@@ -10,8 +10,6 @@ import Admin from "./dashboard/Admin/Admin";
 import AddBlog from "./dashboard/AddBlog/AddBlog";
 import ManagePost from "./dashboard/ManagePost/ManagePost";
 import Login from "./dashboard/Login/Login";
-import PrivateRoute from "./dashboard/PrivateRoute/PrivateRoute";
-
 
 function App() {
   return (
@@ -36,10 +34,10 @@ function App() {
           <Login />
         </Route>
 
-        <PrivateRoute exact path="/admin">
+        <Route exact path="/admin">
           <Admin />
           <ManagePost />
-        </PrivateRoute>
+        </Route>
 
         <Route path="/addBlog">
           <Admin />
